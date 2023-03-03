@@ -1,5 +1,5 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
-import {FilterValuesType} from './App';
+
 
 export type TaskType = {
     id: string
@@ -7,15 +7,16 @@ export type TaskType = {
     isDone: boolean
 }
 
+
 type PropsType = {
     todolistId: string
     title: string
     tasks: Array<TaskType>
     removeTask: (todolistId: string, taskId: string) => void
-    changeFilter: (todolistId: string, value: FilterValuesType) => void
+    changeFilter: (todolistId: string, value: string) => void
     addTask: (todolistId: string, title: string) => void
     changeTaskStatus: (todolistId: string, taskId: string, isDone: boolean) => void
-    filter: FilterValuesType
+    filter: string;
     removeTodolist: (todolistId: string) => void
 }
 
